@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
             {
-                options.Cookie.Name = ".Client1.PeoplesHR.SharedCookie";
+                options.Cookie.Name = ".Client1.PHR.SharedCookie";
                 options.Cookie.Domain = ".localhost.com";
                 options.Cookie.Path = "/";
                 options.Cookie.HttpOnly = true;
@@ -18,7 +18,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                     new DirectoryInfo(@"C:\Shared.Keys"),
                     (builder) =>
                     {
-                        builder.SetApplicationName("PeoplesHR");
+                        builder.SetApplicationName("PHR");
                     }).CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware", "Cookie", "v2"));
             });
 

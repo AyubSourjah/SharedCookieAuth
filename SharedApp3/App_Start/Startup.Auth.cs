@@ -19,7 +19,7 @@ namespace SharedApp3
                 AuthenticationType = CookieAuthenticationDefaults.AuthenticationType,
                 AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active,
                 LoginPath = new PathString("/Security/Login"),
-                CookieName = ".Client1.PeoplesHR.SharedCookie",
+                CookieName = ".Client1.PHR.SharedCookie",
                 CookieDomain = ".localhost.com",
                 CookiePath = "/",
                 CookieHttpOnly = true,
@@ -30,7 +30,7 @@ namespace SharedApp3
                         DataProtectionProvider.Create(new DirectoryInfo(@"C:\Shared.Keys"),
                         (builder) =>
                         {
-                            builder.SetApplicationName("PeoplesHR");
+                            builder.SetApplicationName("PHR");
                         })
                         .CreateProtector(
                             "Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
